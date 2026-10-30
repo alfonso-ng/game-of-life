@@ -1,21 +1,22 @@
-#include <SFML/Graphics.hpp>
+#include "Game.hpp"
 
-int main()
+
+int main(int argc, char **argv)
 {
-	sf::RenderWindow window( sf::VideoMode( { 200, 200 } ), "SFML works!" );
-	sf::CircleShape shape( 100.f );
-	shape.setFillColor( sf::Color::Green );
 
-	while ( window.isOpen() )
-	{
-		while ( const std::optional event = window.pollEvent() )
-		{
-			if ( event->is<sf::Event::Closed>() )
-				window.close();
-		}
+    Vec2List list = Vec2List();
 
-		window.clear();
-		window.draw( shape );
-		window.display();
-	}
+    vec2 p1 = {1, 2};
+    vec2 p2 = {2, 0};
+    vec2 p3 = {1, 1};
+
+    list.push_back(p1);
+    list.push_back(p2);
+    list.push_back(p3);
+
+
+    Game g = Game(16, 16, list);
+
+    g.simulate();
+    return 0;
 }
