@@ -13,8 +13,8 @@ private:
 public:
     Renderer();
 
-    void createWindow(int w, int h);
-    void displayWindow(Window window);
+    void createWindow(int w, int h, char* name);
+    void displayWindow();
 };
 
 #endif

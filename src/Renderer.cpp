@@ -7,7 +7,7 @@ Renderer::Renderer()
     screen = DefaultScreen(display);
 }
 
-void Renderer::createWindow(int w, int h)
+void Renderer::createWindow(int w, int h, char* name)
 {
     window = XCreateSimpleWindow(
         display,
@@ -21,6 +21,10 @@ void Renderer::createWindow(int w, int h)
 
     XStoreName(display, window, "Game of Life");
 
+}
+
+void Renderer::displayWindow()
+{
     // Register events
     XSelectInput(display, window, ExposureMask | ButtonPressMask);
 
@@ -29,9 +33,4 @@ void Renderer::createWindow(int w, int h)
 
     // Process pending X11 requests
     XFlush(display);
-}
-
-void Renderer::displayWindow(Window window)
-{
-    XMapWindow(display, window);
 }

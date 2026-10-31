@@ -18,7 +18,8 @@ int main(int argc, char **argv)
     Game g = Game(16, 16, list);
 
     Renderer renderer = Renderer();
-    renderer.createWindow(800, 600);
+    renderer.createWindow(800, 600, (char*)"Game Of Life");
+    renderer.displayWindow();
 
     g.simulate();
 
