@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Renderer.hpp"
 
 
 int main(int argc, char **argv)
@@ -16,6 +17,10 @@ int main(int argc, char **argv)
 
     Game g = Game(16, 16, list);
 
+    Renderer renderer = Renderer();
+    renderer.createWindow(800, 600);
+
     g.simulate();
+
     return 0;
 }
