@@ -3,7 +3,6 @@
 
 int main(int argc, char **argv)
 {
-
     Vec2List list = Vec2List();
 
     vec2 p1 = {1, 2};
